@@ -14,7 +14,10 @@ import java.util.Date;
 
 public class branch extends HttpServlet{
     public void dopost(HttpServletRequest request,HttpServletResponse response)   throws ServletException, IOException {
-        
+        String name = request.getParameter("name");
+        String branch = request.getParameter("branchname");
+        String area = request.getParameter("area");
+        String location = request.getParameter("location");
 
     }
 }

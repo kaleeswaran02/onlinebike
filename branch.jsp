@@ -7,7 +7,7 @@
             <label>user name</label>
             <input type="text" name="name">
             <label>branch name</label>
-            <input type="text" name="branckname">
+            <input type="text" name="branchname">
             <label>area</label>
             <input type="text" name="area">
             <label>location</label>
