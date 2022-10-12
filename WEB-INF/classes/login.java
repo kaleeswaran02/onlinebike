@@ -68,16 +68,14 @@ public class login  extends HttpServlet {
                 response.sendRedirect("authentication.jsp");
             }
             else{
-                out.print("<script>alert('login unsucessful'); </script>");
-                response.sendRedirect("index.jsp");
+                out.print("<script>alert('login unsucessful');</script>");
             }
         }
             conn.con.close();
         }
         catch(Exception e){
             //System.out.println(e);
-            out.println("<p style=color:red>Account Not Created Try Again</p>"+e);
-            request.getRequestDispatcher("signup.jsp").include(request,response);
+            out.println("<p style=color:red>Account Not Created <a href='signup.jsp'>signup</a> here </p>");
         }
     
     }

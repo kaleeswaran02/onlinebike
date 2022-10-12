@@ -8,6 +8,5 @@
         <a href="remove.jsp">remove bikes</a>
         <a href="checkbikes.jsp">check returns</a>
         <a href="adminregister.jsp">admin register</a>
-
     </body>
 </html>

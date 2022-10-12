@@ -1,3 +1,4 @@
+import conn.config;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;  
 import javax.servlet.ServletException;  
@@ -34,17 +35,18 @@ public class upload extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         try{
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
+            config conn = new config();
+        //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
         
             String s="insert into images(bikename,count,price,image) values ( '"+name+"' , "+count+" , "+price+", '"+img+"' );";
-            Statement st= con.createStatement();
+            Statement st= conn.con.createStatement();
             if(st.executeUpdate(s)!=0){
                     out.print("<span>Image uploaded</span>");
             }
             else{
                 out.print("some error occoured");
             }
-            con.close();
+            conn.con.close();
         }
         catch(SQLException e){
                 System.out.print(e);
