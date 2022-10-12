@@ -18,6 +18,9 @@ public class branch extends HttpServlet{
         String branch = request.getParameter("branchname");
         String area = request.getParameter("area");
         String location = request.getParameter("location");
+        if(name == "prasanna"){
+            
+        }
 
     }
 }
