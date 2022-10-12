@@ -36,5 +36,14 @@
         <url-pattern>/branch</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>adminsignup</servlet-name>
+        <servlet-class>adminsignup</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminsignup</servlet-name>
+        <url-pattern>/adminsignup</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

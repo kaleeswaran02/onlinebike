@@ -41,7 +41,7 @@ public class login  extends HttpServlet {
             config conn = new config();
             conn.connect();
             //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
-            String s="Select username,password,email from login where email= '"+mail+"' ";
+            String s="Select username,password,email,role from login where email= '"+mail+"' ";
 
             Statement st= conn.con.createStatement();
              ResultSet result=st.executeQuery(s);
@@ -49,6 +49,7 @@ public class login  extends HttpServlet {
             String username = result.getString("username");
             String password = result.getString("password");
             String email = result.getString("email");
+            String role = result.getString("role");
             if(pass.equals(password)){
                 int min = 100000;  
                 int max = 999999;  
@@ -63,7 +64,7 @@ public class login  extends HttpServlet {
                 session1.setAttribute("password",password);
                 session1.setAttribute("email",email);
                 session1.setAttribute("otp",n);
-                session1.setAttribute("login",1);
+                session1.setAttribute("role",role);
                 out.print("<script>alert('login sucessful, otp sent to mail'); </script>");
                 response.sendRedirect("authentication.jsp");
             }
