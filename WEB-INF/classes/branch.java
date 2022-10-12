@@ -10,7 +10,7 @@ import javax.servlet.http.*;
 import java.io.*;  
 import javax.servlet.annotation.WebServlet;
 import java.util.*;
-import java.util.Date;
+import java.util.Date; 
 
 public class branch extends HttpServlet{
     public void dopost(HttpServletRequest request,HttpServletResponse response)   throws ServletException, IOException {
@@ -18,9 +18,8 @@ public class branch extends HttpServlet{
         String branch = request.getParameter("branchname");
         String area = request.getParameter("area");
         String location = request.getParameter("location");
-        if(name == "prasanna"){
-            System.out.print("yes");
-        }
+        
+        
 
     }
 }
