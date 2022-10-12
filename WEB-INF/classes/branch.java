@@ -12,8 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import java.util.*;
 import java.util.Date;
 
-public class branch {
-    public void doget(){
+public class branch extends HttpServlet{
+    public void dopost(HttpServletRequest request,HttpServletResponse response)   throws ServletException, IOException {
+        
 
     }
 }
