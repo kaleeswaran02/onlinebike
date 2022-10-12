@@ -1,3 +1,4 @@
+import conn.config;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;  
 import javax.servlet.ServletException;  
@@ -37,10 +38,12 @@ public class login  extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         try{
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
+            config conn = new config();
+            conn.connect();
+            //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
             String s="Select username,password,email from login where email= '"+mail+"' ";
 
-            Statement st= con.createStatement();
+            Statement st= conn.con.createStatement();
              ResultSet result=st.executeQuery(s);
         if(result.next()){
             String username = result.getString("username");
@@ -69,7 +72,7 @@ public class login  extends HttpServlet {
                 response.sendRedirect("index.jsp");
             }
         }
-            con.close();
+            conn.con.close();
         }
         catch(Exception e){
             //System.out.println(e);
