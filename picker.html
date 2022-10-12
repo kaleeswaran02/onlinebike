@@ -1,0 +1,24 @@
+<html>
+<script>
+    function show() {
+        var file = document.getElementById("upload");
+
+        file.addEventListener("change", function() {
+            for (var i = 0; i < file.files.length; i++) {
+                console.log(file.files[i].name);
+            }
+        }, false);
+
+    }
+</script>
+
+<head>
+
+</head>
+
+<body>
+    <input type="file" id="upload" onchange="show()">
+</body>
+
+
+</html>
