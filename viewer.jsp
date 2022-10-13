@@ -1,51 +1,58 @@
 <html>
-    
-    <%@ page import="java.io.*, java.sql.*,conn.config" %>
+    <head>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+    </head>
+    <%@ page import="java.io.*,java.util.*, java.sql.*,conn.config" %>
 
     <% 
         config conn = new config();
         conn.connect();
         //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/online","root","");
-        String s="Select * from bike";
+        String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid";
         Statement st= conn.con.createStatement();
          ResultSet result=st.executeQuery(s);
          while(result.next()){
-            String name = result.getString("bikename");
-            String id = result.getString("bikeid");
-            String img = result.getString("image");
-            String count = result.getString("count");
-            String price = result.getString("price");
-            int branchid = result.getInt("branchid");
-            String s1 = "select * from branch where branchid = "+branchid+"; ";
-            ResultSet result1 = st.executeQuery(s1);
-            if(result1.next()){
-              String branchname = result1.getString("branchname");
-              String location = result1.getString("location");
-              String area = result1.getString("area");
-              String status = result1.getString("status"); 
+            String bikename =   result.getString("bikename");
+            String bikeid =     result.getString("bikeid");
+            String image =      result.getString("image");
+            String count =      result.getString("count");
+            String price =      result.getString("price");
+            String branchid =   result.getString("branchid");
+            String branchname = result.getString("branchname");
+            String location =   result.getString("location");
+            String area =       result.getString("area");
+            String status =     result.getString("status");
+            String branchowner = result.getString("branchowner");
     %>
-<div class="wrapper">
-    <div class="product-img">
-      <img src="data:image/jpeg;base64,<%=img%> " height="200" width="200">
-      <label>Branch name:</label><span style="color:red"><%=branchname%></span><br>
-      <label>location:</label><span style="color:red"><%=location%></span><br>
-      <label>area:</label><span style="color:red"><%=area%></span><br>
-      <label>status:</label><span style="color:red"><%=status%></span><br>
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1><%=name %></h1>
-        <h2>availabe:<%=count%></h2>
-        <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p>
-      </div>
-      <div class="product-price-btn">
-        <p><span><%=price %></span>$</p>
-        <form action="view.jsp" methos="POST">
-            <input name="id<%=id%>" type="submit" value="BuyNow">
+    <div class="card">
+      <img style="margin-left:7%;" src="data:image/jpeg;base64,<%=image%> " height="200" width="200" alt="bikeimg"><br>
+        <h1><%=bikename %></h1>
+        <table>
+          <tr>
+                <td><span>branchname:</span></td>
+                <td><span><%=branchname%></span></td>
+          </tr>
+          <tr>
+                <td><span>branchowner:</span>
+                <td><span> <%=branchowner%></span></td>
+          </tr>
+          <tr>
+                <td><span>location: </span>
+                <td><span><%=location%></span></td>
+          </tr>
+          <tr>
+                <td><span>area:</span>
+                <td><span> <%=area%></span></td>
+          </tr>
+        </table>
+        <span>availabe:<%=count%></span>
+        <p><span>Price per day:<%=price %></span>$</p>
+        <form style="margin-left:20%;" action="details.jsp?branchid=${branchid}&bikeid=${bikeid}" methos="POST">
+            <input name="<%=branchid%>:<%=bikeid%>" type="submit" value="Order">
         </form>
       </div>
-    </div>
-  </div>
-    <% }
-    }conn.con.close(); %>
+    <%}%>
+    <body>
 </html>

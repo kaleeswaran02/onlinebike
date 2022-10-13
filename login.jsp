@@ -4,7 +4,7 @@
     <title>Login Form</title>    
     <link rel="stylesheet" type="text/css" href="css/style.css">    
 </head> 
-<!-- <style>
+ <style>
   body  
 {  
     margin: 0;  
@@ -64,7 +64,7 @@ a{
     float: right;  
     background-color: rgb(226, 220, 220);  
 } 
-</style>    -->
+</style>   
 <body>   
     <a href="signup.jsp">signup</a>
 
