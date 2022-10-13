@@ -9,7 +9,7 @@
             config conn = new config();
             conn.connect();
             Statement st = conn.con.createStatement();
-            ResultSet result = st.executeQuery("Select * from branch where branchowner = 'Prasanna kumar A';");
+            ResultSet result = st.executeQuery("Select * from branch where branchowner = '"+name+"';");
             if(result.next()){
                 String branchname = result.getString("branchname");
                 String owner = result.getString("branchowner");
