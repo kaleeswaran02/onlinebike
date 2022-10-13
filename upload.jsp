@@ -12,6 +12,7 @@ javax.imageio.ImageIO,
 java.io.ByteArrayInputStream,org.apache.commons.codec.binary.Base64,javax.xml.bind.DatatypeConverter" %>
     </head>
         <% 
+        String  a = "prasanna";
             HttpSession session1 = request.getSession(false);
             int id = (int)session1.getAttribute("branchid");
         %>
