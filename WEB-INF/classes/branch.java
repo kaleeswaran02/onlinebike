@@ -22,6 +22,11 @@ public class branch extends HttpServlet{
         String branch = request.getParameter("branchname");
         String area = request.getParameter("area");
         String location = request.getParameter("location");
+<<<<<<< HEAD
+        if(name == "prasanna"){
+            
+        }
+=======
         
         HttpSession session1 = request.getSession(false);
         String username = (String)session1.getAttribute("username");
@@ -44,6 +49,7 @@ public class branch extends HttpServlet{
         }
 
 
+>>>>>>> 9a54a62753d72ca01311803b5b2557980805af58
 
     }
 }
