@@ -9,7 +9,7 @@ javax.swing.filechooser.*,
 java.awt.image.WritableRaster,
 java.awt.image.DataBufferByte,
 javax.imageio.ImageIO,
-java.io.ByteArrayInputStream,org.apache.commons.codec.binary.Base64,javax.xml.bind.DatatypeConverter" %>
+java.io.ByteArrayInputStream,org.apache.commons.codec.binary.Base64" %>
     </head>
         <% 
             String s = "prasanna";
