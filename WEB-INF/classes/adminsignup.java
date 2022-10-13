@@ -11,8 +11,8 @@ import javax.servlet.http.*;
 import java.io.*;  
 import javax.servlet.annotation.WebServlet;
 import java.util.*;
-@WebServlet("signup")
-public class signup  extends HttpServlet { 
+@WebServlet("adminsignup")
+public class adminsignup  extends HttpServlet { 
     protected void doPost(HttpServletRequest request,HttpServletResponse response)   throws ServletException, IOException {
         String email=request.getParameter("email");
         String pass=request.getParameter("pass");
@@ -38,16 +38,16 @@ public class signup  extends HttpServlet {
     
            //////////////////////////
         
-        String s="insert into login(email,password,username,phno,role) values('"+email+"','"+pass+"','"+name+"',"+phno+",'Customer')";
+        String s="insert into login(email,password,username,phno,role) values('"+email+"','"+pass+"','"+name+"',"+phno+",'Admin')";
 
         Statement st= conn.con.createStatement();
 
              int rows=st.executeUpdate(s);
         if(rows>0){
-            out.println("<p style=color:darkblue>Account Created Now <a href='login.jsp'>Login</a></p>");
+            out.println("<p style=color:darkblue>Account Created Now <a href='admin.jsp'>Home</a></p>");
             request.getRequestDispatcher("login.jsp").include(request,response);        }
         else{
-            out.println("<p style=color:red>Account already exists <a href='login.jsp'>login</a> here</p>");
+            out.println("<p style=color:red>Account already exists <a href='admin.jsp'>Home</a> here</p>");
         }
     }
            

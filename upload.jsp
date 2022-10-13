@@ -11,12 +11,16 @@ java.awt.image.DataBufferByte,
 javax.imageio.ImageIO,
 java.io.ByteArrayInputStream,org.apache.commons.codec.binary.Base64,javax.xml.bind.DatatypeConverter" %>
     </head>
-
+        <% 
+            HttpSession session1 = request.getSession(false);
+            int id = (int)session1.getAttribute("branchid");
+        %>
     <body>
         <form action="upload.jsp" method="POST">
             <input type="submit" value="pick" name="file">
         </form>
         <form action="upload" method="post">
+            <span>Branch Id: <%=id%> </span>
             <span>bike name</span>
             <input type="text" name="name">
             <span>price</span>
@@ -44,7 +48,6 @@ java.io.ByteArrayInputStream,org.apache.commons.codec.binary.Base64,javax.xml.bi
                 byte[] bytes = new byte[(int)imgPath.length()];
                 fileInputStreamReader.read(bytes);
                 String encodedfile = new String(Base64.encodeBase64(bytes), "UTF-8"); 
-                HttpSession session1 = request.getSession();
                 session1.setAttribute("img",encodedfile);
             }
         %>

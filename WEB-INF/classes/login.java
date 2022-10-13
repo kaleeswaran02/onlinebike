@@ -1,3 +1,4 @@
+import conn.config;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;  
 import javax.servlet.ServletException;  
@@ -37,15 +38,18 @@ public class login  extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         try{
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
-            String s="Select username,password,email from login where email= '"+mail+"' ";
+            config conn = new config();
+            conn.connect();
+            //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
+            String s="Select username,password,email,role from login where email= '"+mail+"' ";
 
-            Statement st= con.createStatement();
+            Statement st= conn.con.createStatement();
              ResultSet result=st.executeQuery(s);
         if(result.next()){
             String username = result.getString("username");
             String password = result.getString("password");
             String email = result.getString("email");
+            String role = result.getString("role");
             if(pass.equals(password)){
                 int min = 100000;  
                 int max = 999999;  
@@ -60,21 +64,19 @@ public class login  extends HttpServlet {
                 session1.setAttribute("password",password);
                 session1.setAttribute("email",email);
                 session1.setAttribute("otp",n);
-                session1.setAttribute("login",1);
+                session1.setAttribute("role",role);
                 out.print("<script>alert('login sucessful, otp sent to mail'); </script>");
                 response.sendRedirect("authentication.jsp");
             }
             else{
-                out.print("<script>alert('login unsucessful'); </script>");
-                response.sendRedirect("index.jsp");
+                out.print("<script>alert('login unsucessful');</script>");
             }
         }
-            con.close();
+            conn.con.close();
         }
         catch(Exception e){
             //System.out.println(e);
-            out.println("<p style=color:red>Account Not Created Try Again</p>"+e);
-            request.getRequestDispatcher("signup.jsp").include(request,response);
+            out.println("<p style=color:red>Account Not Created <a href='signup.jsp'>signup</a> here </p>");
         }
     
     }

@@ -1,0 +1,5 @@
+-- use online;
+-- SELECT * from login;
+-- SELECT * from branch;
+-- Select * from customer;
+--Select * from bike;

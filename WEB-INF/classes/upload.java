@@ -1,3 +1,4 @@
+import conn.config;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;  
 import javax.servlet.ServletException;  
@@ -31,20 +32,22 @@ public class upload extends HttpServlet {
         String count = request.getParameter("count");
         String price = request.getParameter("price");
         String img= (String)session1.getAttribute("img");
+        int id = (int)session1.getAttribute("branchid");
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         try{
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
-        
-            String s="insert into images(bikename,count,price,image) values ( '"+name+"' , "+count+" , "+price+", '"+img+"' );";
-            Statement st= con.createStatement();
+            config conn = new config();
+        //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
+            conn.connect();
+            String s="insert into bike(bikename,count,price,image,branchid) values ( '"+name+"' , "+count+" , "+price+", '"+img+"',"+id+");";
+            Statement st= conn.con.createStatement();
             if(st.executeUpdate(s)!=0){
-                    out.print("<span>Image uploaded</span>");
+                    out.print("<span>Image uploaded. <a href='admin.jsp'>Home</a></span>");
             }
             else{
                 out.print("some error occoured");
             }
-            con.close();
+            conn.con.close();
         }
         catch(SQLException e){
                 System.out.print(e);

@@ -32,8 +32,12 @@ flex-direction: column;
         String s = request.getParameter("otp");
         HttpSession session1 = request.getSession(false);
         int s1 = (int)session1.getAttribute("otp");
+        String s2 = (String)session1.getAttribute("role");
         if(Integer.valueOf(s) == s1){
-            response.sendRedirect("index.jsp");
+            if(s2.equals("Customer"))
+                response.sendRedirect("index.jsp");
+            else    
+                response.sendRedirect("admin.jsp");
         }
         else{
              out.print("<span>Wrong otp</span>");
