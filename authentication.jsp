@@ -1,22 +1,9 @@
 <html>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Raleway:200');
-body, html {
-height: 100%;
-margin: 0;
-font-family: 'Raleway', sans-serif;
-font-weight: 200;
-}
-body {
-background-color: #8e8eea;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-}
-    </style>
-    <body>
-        <div class="prompt">
+<center>
+    <body style="background-color:grey;">
+        <jsp:include page="header.jsp" />
+        <div style="margin-top:20%;">
+        <div>
         <b><h3>Enter the code generated on your email to log in!</h3></b>
         </div>
         <form method="POST" action="authentication.jsp">
@@ -24,8 +11,6 @@ flex-direction: column;
             <input type="submit" value="verify" name="submit"><span id="error"></span>
         
         </form>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="app.js"></script>
 
 <%
     if(request.getParameter("submit")!=null){
@@ -44,4 +29,6 @@ flex-direction: column;
         }
     }
 %>
+</div>
+</center>
 <html>

@@ -2,9 +2,9 @@
 <html>    
 <head>    
     <title>Login Form</title>    
-    <link rel="stylesheet" type="text/css" href="css/style.css">    
+    <link rel="stylesheet" type="text/css" href="index.css">    
 </head> 
- <style>
+ <%-- <style>
   body  
 {  
     margin: 0;  
@@ -64,32 +64,31 @@ a{
     float: right;  
     background-color: rgb(226, 220, 220);  
 } 
-</style>   
-<body>   
-    <a href="signup.jsp">signup</a>
-
+</style>    --%>
+<body style="background-color:grey;">  
+<jsp:include page="header.jsp" />
+<center>
+    <div style="margin-top:20%;">
     <h2>Login Page</h2><br> 
 
     <div class="login">    
 
       <form name="loginForm" method="POST" action="login">  
- 
-        <label><b>User Name     
-        </b>    
-        </label>    
-        <input type="text" name="email" id="Uname" placeholder="Username">    
-        <br><br>    
-        <label><b>Password     
-        </b>    
-        </label>    
-        <input type="Password" name="pass" id="Pass" placeholder="Password">    
-        <br><br>    
-        <p>  <input type="submit" value="Submit"/></p>      
-        <br><br>    
-
-        <a href="forgot.jsp">Forgot password</a>  
-        
+        <table>
+        <tr>
+        <td><label><b>User Name</b></label></td>   
+        <td><input type="text" name="email" id="Uname"></td>    
+        </tr>
+        <tr>    
+        <td><label><b>Password</b></label>    </td>
+        <td><input type="Password" name="pass" id="Pass"></td>    
+        </tr>      
+        </table>
+        <center>
+        <input type="submit" value="Submit"/></center>
+        <a href="forgot.jsp">Forgot password</a>
     </form>     
-</div>    
+</div>  
+</center>  
 </body>    
 </html> 

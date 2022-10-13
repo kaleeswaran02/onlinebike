@@ -13,6 +13,5 @@
 		</div>
 	  </section>
 	  <!-- End Hero Section  -->
-	
 	</body>
 	</html>
