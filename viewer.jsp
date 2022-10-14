@@ -2,8 +2,9 @@
     <head>
     <link rel="stylesheet" href="index.css">
     </head>
-    <body>
+    <body style="background-color:grey;">
     </head>
+    <jsp:include page="header.jsp" />
     <%@ page import="java.io.*,java.util.*, java.sql.*,conn.config" %>
 
     <% 

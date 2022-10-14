@@ -23,7 +23,6 @@
 				<li><a href="login.jsp">login</a></li>
 				<li><a href="signup.jsp">signup</a></li>
 				<%}else{%>
-                <li><a href="viewer.jsp">View Bikes</a></li>
 				<li><a href="logout.jsp">logout</a></li>
 				<%}%>
 			  </ul>

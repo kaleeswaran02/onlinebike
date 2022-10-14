@@ -4,7 +4,7 @@
     <title>Login Form</title>    
     <link rel="stylesheet" type="text/css" href="index.css">    
 </head> 
- <%-- <style>
+ <!-- <style>
   body  
 {  
     margin: 0;  
@@ -64,7 +64,7 @@ a{
     float: right;  
     background-color: rgb(226, 220, 220);  
 } 
-</style>    --%>
+</style>    -->
 <body style="background-color:grey;">  
 <jsp:include page="header.jsp" />
 <center>
@@ -77,11 +77,11 @@ a{
         <table>
         <tr>
         <td><label><b>User Name</b></label></td>   
-        <td><input type="text" name="email" id="Uname"></td>    
+        <td><input type="text" name="email" id="Uname" required></td>    
         </tr>
         <tr>    
         <td><label><b>Password</b></label>    </td>
-        <td><input type="Password" name="pass" id="Pass"></td>    
+        <td><input type="Password" name="pass" id="Pass" required></td>    
         </tr>      
         </table>
         <center>
