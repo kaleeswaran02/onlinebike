@@ -11,7 +11,7 @@
     <jsp:include page="header.jsp" />
     <center>
         <div style="margin-top:20%;">
-        <h1>Signup Page</h1><br> 
+        <h1>Admin Signup Page</h1><br> 
     
         <div class="login"> 
         <form action="adminsignup" method="POST">

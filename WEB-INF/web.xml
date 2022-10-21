@@ -44,6 +44,26 @@
         <servlet-name>adminsignup</servlet-name>
         <url-pattern>/adminsignup</url-pattern>
     </servlet-mapping>
+    
+
+    <servlet>
+        <servlet-name>forgotpassword</servlet-name>
+        <servlet-class>forgotpassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>forgotpassword</servlet-name>
+        <url-pattern>/forgotpassword</url-pattern>
+    </servlet-mapping>
+    
+
+    <servlet>
+        <servlet-name>NewPassword</servlet-name>
+        <servlet-class>NewPassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewPassword</servlet-name>
+        <url-pattern>/NewPassword</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
