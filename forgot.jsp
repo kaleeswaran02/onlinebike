@@ -13,10 +13,10 @@
 <style>
 body {
 	background-position: center;
-	background-color: #eee;
+	background-color: rgb(82, 77, 77);
 	background-repeat: no-repeat;
 	background-size: cover;
-	color: #505050;
+	color: #1b1717;
 	font-family: "Rubik", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-weight: normal;
@@ -25,9 +25,9 @@ body {
 }
 
 .forgot {
-	background-color: #fff;
+	background-color: rgb(163, 158, 158);
 	padding: 12px;
-	border: 1px solid #dfdfdf
+	border: 1px solid #929292
 }
 
 .padding-bottom-3x {
@@ -35,7 +35,7 @@ body {
 }
 
 .card-footer {
-	background-color: #fff
+	background-color: rgb(134, 131, 131)
 }
 
 .btn {
@@ -44,7 +44,7 @@ body {
 
 .form-control:focus {
 	color: #495057;
-	background-color: #fff;
+	background-color: rgb(152, 150, 150);
 	border-color: #76b7e9;
 	outline: 0;
 	box-shadow: 0 0 0 0px #28a745
