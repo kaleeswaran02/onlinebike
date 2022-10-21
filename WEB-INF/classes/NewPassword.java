@@ -30,15 +30,14 @@ public class NewPassword extends HttpServlet {
 		if (newPassword != null && confPassword != null && newPassword.equals(confPassword)) {
 
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube?useSSL=false", "root",
-						"root");
-				PreparedStatement pst = con.prepareStatement("update users set upwd = ? where uemail = ? ");
-				pst.setString(1, newPassword);
-				pst.setString(2, (String) session.getAttribute("email"));
-
-				int rowCount = pst.executeUpdate();
-				if (rowCount > 0) {
+				config conn = new config();
+				conn.connect();
+				//Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
+				String s="update login set password = "+newPassword+" where uemail = "+(String) session.getAttribute("email")+" ";
+	
+				Statement st= conn.con.createStatement();
+				int n =st.executeUpdate(s);
+				if (n > 0) {
 					request.setAttribute("status", "resetSuccess");
 					dispatcher = request.getRequestDispatcher("login.jsp");
 				} else {
