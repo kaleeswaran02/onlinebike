@@ -94,6 +94,7 @@ public class forgotpassword extends HttpServlet {
                 Mail.mainn(n,email);
                 HttpSession session1 = request.getSession();
                 session1.setAttribute("otp",n);
+                session1.setAttribute("emil",email);
                 response.sendRedirect("EnterOtp.jsp");
 
 

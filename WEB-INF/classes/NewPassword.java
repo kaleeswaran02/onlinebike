@@ -23,7 +23,7 @@ public class NewPassword extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
+		HttpSession session1 = request.getSession(false);
 		String newPassword = request.getParameter("password");
 		String confPassword = request.getParameter("confPassword");
 		RequestDispatcher dispatcher = null;
@@ -33,7 +33,7 @@ public class NewPassword extends HttpServlet {
 				config conn = new config();
 				conn.connect();
 				//Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
-				String s="update login set password = "+newPassword+" where uemail = "+(String) session.getAttribute("email")+" ";
+				String s="update login set password = '"+newPassword+"' where email = '"+(String) session1.getAttribute("email")+"' ";
 	
 				Statement st= conn.con.createStatement();
 				int n =st.executeUpdate(s);

@@ -25,7 +25,7 @@ body {
 }
 
 .forgot {
-	background-color: rgb(163, 158, 158);
+	background-color: rgb(245, 243, 243);
 	padding: 12px;
 	border: 1px solid #929292
 }
@@ -35,7 +35,7 @@ body {
 }
 
 .card-footer {
-	background-color: rgb(134, 131, 131)
+	background-color: rgb(252, 245, 245)
 }
 
 .btn {
@@ -43,8 +43,8 @@ body {
 }
 
 .form-control:focus {
-	color: #495057;
-	background-color: rgb(152, 150, 150);
+	color: #f5f7f9;
+	background-color: rgb(240, 235, 235);
 	border-color: #76b7e9;
 	outline: 0;
 	box-shadow: 0 0 0 0px #28a745
