@@ -36,8 +36,7 @@ public class NewPassword extends HttpServlet {
 				String s="update login set password = '"+newPassword+"' where email = '"+(String) session1.getAttribute("email")+"' ";
 	
 				Statement st= conn.con.createStatement();
-				int n =st.executeUpdate(s);
-				if (n > 0) {
+				if (st.executeUpdate(s)!=0) {
 					request.setAttribute("status", "resetSuccess");
 					dispatcher = request.getRequestDispatcher("login.jsp");
 				} else {
