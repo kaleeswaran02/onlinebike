@@ -37,8 +37,7 @@ public class NewPassword extends HttpServlet {
 	
 				Statement st= conn.con.createStatement();
 				if (st.executeUpdate(s)!=0) {
-					request.setAttribute("status", "resetSuccess");
-					dispatcher = request.getRequestDispatcher("login.jsp");
+					dispatcher = request.getRequestDispatcher("logout.jsp");
 				} else {
 					request.setAttribute("status", "resetFailed");
 					dispatcher = request.getRequestDispatcher("newPassword.jsp");
