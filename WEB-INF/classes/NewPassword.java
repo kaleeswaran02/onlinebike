@@ -33,7 +33,7 @@ public class NewPassword extends HttpServlet {
 				config conn = new config();
 				conn.connect();
 				//Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/online","root","123456");
-				String s="update login set password = '"+newPassword+"' where email = '"+(String) session1.getAttribute("email")+"' ";
+				String s="update login set password = '"+newPassword+"' where email = '"+(String) session1.getAttribute("emil")+"' ";
 	
 				Statement st= conn.con.createStatement();
 				if (st.executeUpdate(s)!=0) {

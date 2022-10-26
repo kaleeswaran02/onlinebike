@@ -90,9 +90,9 @@ public class forgotpassword extends HttpServlet {
                 int n = Integer.parseInt(code);
                 mail Mail = new mail();
                 Mail.mainn(n,email);
-                HttpSession session1 = request.getSession(false);
+                HttpSession session1 = request.getSession();
                 session1.setAttribute("otp",n);
-                session1.setAttribute("emil",email);
+                session1.setAttribute("emil",""+email);
                 response.sendRedirect("EnterOtp.jsp");
 		}
 		

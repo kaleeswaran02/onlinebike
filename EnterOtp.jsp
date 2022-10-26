@@ -75,7 +75,7 @@
         String s = request.getParameter("otp");
         HttpSession session1 = request.getSession(false);
         int s1 = (int)session1.getAttribute("otp");
-        String s2 = (String)session1.getAttribute("role");
+        String s2 = (String)session1.getAttribute("emil");
         if(Integer.valueOf(s) == s1){
           response.sendRedirect("newPassword.jsp");
         }

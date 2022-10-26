@@ -75,7 +75,7 @@ public class login  extends HttpServlet {
             conn.con.close();
         }
         catch(Exception e){
-            //System.out.println(e);
+            System.out.println(e);
             out.println("<p style=color:red>Account Not Created <a href='signup.jsp'>signup</a> here </p>");
         }
     
