@@ -86,8 +86,6 @@ public class forgotpassword extends HttpServlet {
 		
 		if(email!=null || !email.equals(" ")) {
 			// sending otp
-            
-			
             String code = getTOTPCode();
                 int n = Integer.parseInt(code);
                 mail Mail = new mail();

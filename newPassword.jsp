@@ -60,7 +60,7 @@
 								<!-- Log in Button -->
 								<div class="form-group row justify-content-center">
 									<div class="col-3 px-3 mt-3">
-										<input type="submit" value="Reset"
+										<input type="submit" value="Reset" name="submit"
 											class="btn btn-block btn-info">
 									</div>
 								</div>
