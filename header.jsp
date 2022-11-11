@@ -22,6 +22,7 @@
 				<%if(session1.getAttribute("email") == null){%>
 				<li><a href="login.jsp">login</a></li>
 				<li><a href="signup.jsp">signup</a></li>
+				<li><a href="about.jsp"></a></li>
 				<%}else{%>
 				<li><a href="logout.jsp">logout</a></li>
 				<%}%>
