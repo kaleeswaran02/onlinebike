@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
-   
-   <head>
-      <script src = "https://maps.googleapis.com/maps/api/js"></script>
-      
-      <script>
-         function loadMap() {
-			
-            var marker = new google.maps.Marker({
-  position: coordinates,
-  map: map,
-  icon: {
-    url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-    labelOrigin: new google.maps.Point(75, 32),
-    size: new google.maps.Size(32,32),
-    anchor: new google.maps.Point(16,32)
-  },
-  label: {
-    text: "5409 Madison St",
-    color: "#C70E20",
-    fontWeight: "bold"
-  }
-});
-         }
-      </script>
-      
-   </head>
-   
-   <body onload = "loadMap()">
-      <div id = "sample" style = "width:580px; height:400px;"></div>
-   </body>
-   
+<head>
+	<style>
+	#map {
+		height: 250px;
+		width: 250px;
+	}
+	</style>
+</head>
+<body>
+	<h3>GFG Google Maps Demo</h3>
+	<div id="map"></div>
+	<script>
+	function initMap() {
+		var uluru = {lat: 28.501859, lng: 77.410320};
+		var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 4,
+		center: uluru
+		});
+		var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+		});
+	}
+	</script>
+	<script async defer
+	src=
+"https://maps.googleapis.com/maps/api/js?key=AIzaSyBOO59ktIjU4CcWGskRWPuwTZDh4qi3KMQ&callback=initMap">
+	</script>
+</body>
 </html>
+
+
