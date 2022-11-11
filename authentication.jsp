@@ -15,7 +15,7 @@
 <%
     if(request.getParameter("submit")!=null){
         String s = request.getParameter("otp");
-        HttpSession session1 = request.getSession(false);
+        HttpSession session1 = request.getSession();
         int s1 = (int)session1.getAttribute("otp");
         String s2 = (String)session1.getAttribute("role");
         if(Integer.valueOf(s) == s1){

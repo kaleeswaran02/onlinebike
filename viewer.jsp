@@ -50,8 +50,9 @@
         </table>
         <span>availabe:<%=count%></span>
         <p><span>Price per day:<%=price %></span>$</p>
-        <form style="margin-left:20%;" action="details.jsp?branchid=${branchid}&bikeid=${bikeid}" methos="POST">
-            <input name="<%=branchid%>:<%=bikeid%>" type="submit" value="Order">
+        <form style="margin-left:20%;" action="details.jsp" method="GET">
+            <input type="text" name="passval" value="<%=bikeid%>" hidden>
+            <input name="submit" type="submit" value="Order">
         </form>
       </div>
     <%}%>

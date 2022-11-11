@@ -36,15 +36,17 @@
         </tr>
         </table>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" style="margin-top:20%;">
         <button><a href="upload.jsp"> add bikes </a><br></button>
         <button><a href="remove.jsp">remove bikes</a><br></button>
         <button><a href="checkbikes.jsp">check returns</a><br></button>
         <%}else{%>
+        <div style="margin-top:100px">
         <button><a href="branch.jsp"> register a branch </a><br></button>
         <%}%>
         <button><a href="viewer.jsp">view bikes</a><br></button>
         <button><a href="adminregister.jsp">admin register</a><br></button>
+        </div>
         </div>
         </div>
         <center>
