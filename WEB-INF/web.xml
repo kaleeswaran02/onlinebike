@@ -65,5 +65,14 @@
         <url-pattern>/NewPassword</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>book</servlet-name>
+        <servlet-class>book</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bok</servlet-name>
+        <url-pattern>/book</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

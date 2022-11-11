@@ -15,8 +15,7 @@
         String branchid1 = request.getParameter("branchid");
         config conn = new config();
         conn.connect();
-        out.print("<h1>"+bikeid1+"</h1>");
-        /*String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid where a.bikeid="+bikeid1+" ;";
+        String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid where a.bikeid="+bikeid1+" ;";
         Statement st= conn.con.createStatement();
          ResultSet result=st.executeQuery(s); 
          while(result.next()){
@@ -54,13 +53,8 @@
           </tr>
         </table>
         <span>availabe:<%=count%></span>
-
-        <form action="Book" method="POST">
-                <label>Price</label>
-                <input type="text" name="price" value=<%=price %> readonly>
-                <input type="submit" value="Confirm book" name="submit">
-        </form>
+                <button style="margin-left:20%; width:70px; height:30px;"><a href="book.jsp">Confirm Order</a></button>
       </div>
-         <%}*/%>
+         <%}%>
     </body>
 </html>
