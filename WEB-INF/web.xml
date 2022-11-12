@@ -66,13 +66,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>book</servlet-name>
-        <servlet-class>book</servlet-class>
+        <servlet-name>INDEX</servlet-name>
+        <servlet-class>index</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>bok</servlet-name>
-        <url-pattern>/book</url-pattern>
+        <servlet-name>INDEX</servlet-name>
+        <url-pattern>/index</url-pattern>
     </servlet-mapping>
-
 
 </web-app>
