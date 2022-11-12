@@ -7,9 +7,12 @@
     width:600px;
     margin-top:11%;
     margin-left:29%;
+    background-color: black;
 }
 .Signup-head{
     padding:8px;
+    color: crimson;
+    background-color: black;
 }
 .signup-content .radio{
     margin:10px 10px;
@@ -18,7 +21,7 @@
     width:400px;
     padding:10px;
     margin:10px;
-    color:#fff;
+    color:crimson;
 }
 .signup-content2 .tarikh{
     margin:10px;
@@ -28,7 +31,7 @@
 .signup-content2  .person{
     padding:10px;
     margin:10px;
-    color:#fff;
+    color:crimson;
 }
 .signup-content2 .travel{
     margin:20px 20px;
@@ -42,6 +45,7 @@
     width:200px;
     padding:10px;
     margin-left:200px;
+    background-color: crimson;
 }
 </style>
 <head>
@@ -55,9 +59,9 @@
 <jsp:include page="header.jsp" />
     <form action="book" method="POST">
 
-        <div class="signup-form bg-dark">
+        <div class="signup-form">
 
-            <div class="Signup-head bg-warning">
+            <div class="Signup-head">
                 <h1>ENTER BOOKING DETAILS</h1>
             </div>
             <div class="signup-content2">
@@ -69,7 +73,7 @@
             <input type="date" name="depart" class="tarikh bg-dark text-white">
             <label class="text-white" style="margin-left:10px;">Return</label>
             <input type="date" name="return" class="tarikh bg-dark">
-            <input type="submit" value="Check Availability" class="submit-btn bg-warning">
+            <input type="submit" value="Proceed" class="submit-btn">
         </div>
     </form>
 </body>
