@@ -39,6 +39,7 @@
         <div class="grid-item" style="margin-top:20%;">
         <button><a href="upload.jsp"> add bikes </a><br></button>
         <button><a href="remove.jsp">remove bikes</a><br></button>
+        <button><a href="adminbooks.jsp">Bookings</a><br></button>
         <button><a href="checkbikes.jsp">check returns</a><br></button>
         <%}else{%>
         <div style="margin-top:100px">
