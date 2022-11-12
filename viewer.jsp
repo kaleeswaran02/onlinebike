@@ -11,7 +11,7 @@
         config conn = new config();
         conn.connect();
         //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/online","root","");
-        String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid";
+        String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid and a.count > 0";
         Statement st= conn.con.createStatement();
          ResultSet result=st.executeQuery(s);
          while(result.next()){
