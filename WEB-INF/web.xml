@@ -70,7 +70,7 @@
         <servlet-class>book</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>bok</servlet-name>
+        <servlet-name>book</servlet-name>
         <url-pattern>/book</url-pattern>
     </servlet-mapping>
 

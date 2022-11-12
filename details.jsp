@@ -12,6 +12,7 @@
         String username = (String)session1.getAttribute("username");
         String email = (String)session1.getAttribute("email");
         String bikeid1 = request.getParameter("bikeid");
+        session1.setAttribute("bikeid",bikeid1);
         String branchid1 = request.getParameter("branchid");
         config conn = new config();
         conn.connect();
@@ -24,6 +25,7 @@
             String image =      result.getString("image");
             String count =      result.getString("count");
             String price =      result.getString("price");
+            session1.setAttribute("price",price);
             String branchid =   result.getString("branchid");
             String branchname = result.getString("branchname");
             String location =   result.getString("location");
