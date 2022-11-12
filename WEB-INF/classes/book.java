@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("book")
 public class book extends HttpServlet{
     public void doPost(HttpServletRequest request,HttpServletResponse response)   throws ServletException, IOException {
-        String from  = reequest.getParameter("from");
+        String from  = request.getParameter("from");
+        String to  = request.getParameter("to");
     }
 }
