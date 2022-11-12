@@ -57,7 +57,7 @@
         <div class="signup-form bg-dark">
 
             <div class="Signup-head bg-warning">
-                <h1>Reserve Your Ticket</h1>
+                <h1>Reserve Your Bike</h1>
             </div>
             <div class="signup-content">
                 <input type="radio" class="radio" name="r">
