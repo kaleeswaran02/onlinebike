@@ -61,8 +61,13 @@
 
         <div class="signup-form">
 
+<<<<<<< HEAD
+            <div class="Signup-head bg-warning">
+                <h1>Reserve Your Bike</h1>
+=======
             <div class="Signup-head">
                 <h1>ENTER BOOKING DETAILS</h1>
+>>>>>>> 7730723d5070076be18e51a430b01bc3ead2802e
             </div>
             <div class="signup-content2">
                 <input type="text" name="from" placeholder="From" class="input bg-dark">

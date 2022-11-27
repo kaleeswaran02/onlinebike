@@ -17,6 +17,7 @@
         String bikeid1 = request.getParameter("bikeid");
         session1.setAttribute("bikeid",bikeid1);
         String branchid1 = request.getParameter("branchid");
+        session1.setAttribute("bikeid",bikeid1);
         config conn = new config();
         conn.connect();
         String s="Select a.bikename, a.image, a.bikeid, a.count, a.price, a.branchid, b.branchowner, b.branchname, b.location, b.area, b.status from bike a inner join branch b on a.branchid=b.branchid where a.bikeid="+bikeid1+" ;";

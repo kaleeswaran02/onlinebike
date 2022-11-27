@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <form>
+    <form action="checkavail">
 
         <div class="signup-form bg-dark">
 
@@ -68,16 +68,16 @@
             </div>
 
             <div class="signup-content2">
-                <input type="text" placeholder="From" class="input bg-dark">
-                <input type="text" placeholder="To" class="input bg-dark"><br>
+                <input type="text" placeholder="From" class="input bg-dark" name="from">
+                <input type="text" placeholder="To" class="input bg-dark" name="to"><br>
             
 
             <label class="text-white" style="margin-left:10px;">Depart</label>
-            <input type="date" class="tarikh bg-dark text-white">
+            <input type="date" class="tarikh bg-dark text-white" name="depart">
             <label class="text-white" style="margin-left:10px;">Return</label>
-            <input type="date" class="tarikh bg-dark">
+            <input type="date" class="tarikh bg-dark" name="arrive">
 
-            <input type="number" class="bg-dark person" placeholder="Adults">
+            <!-- <input type="number" class="bg-dark person" placeholder="Adults">
             <input type="number" class="bg-dark person" placeholder="Children"><br>
 
             <label class="text-white travel">Travel Class</label>
@@ -91,7 +91,7 @@
                 <option>Sleeper Class</option>
                 <option>Second Class</option>
                 <option>General</option>
-            </select>
+            </select> -->
 
             <input type="submit" value="Check Availability" class="submit-btn bg-warning">
         </div>
