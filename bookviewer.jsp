@@ -70,6 +70,6 @@
     <%
         if(request.getParameter("bikeid")!= null && request.getParameter("email")!= null){
             String bikeid = request.getParameter("bikeid");
-            int rows1 = st.executeUpdate("delete from customer where bikeid="+bikeid+" and email= '"+email+"' limit1");
+            int rows1 = st.executeUpdate("delete from customer where bikeid="+bikeid+" and email= '"+email+"' ");
         }
     %>
