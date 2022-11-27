@@ -11,7 +11,7 @@
         HttpSession session1 = request.getSession(false);
         String username = (String)session1.getAttribute("username");
         if(username == null){
-            responce.sendRedirect("login.jsp");
+            response.sendRedirect("login.jsp");
         }
         String email = (String)session1.getAttribute("email");
         String bikeid1 = request.getParameter("bikeid");
