@@ -18,6 +18,7 @@
                 String datefrom = result.getString("datefrom");
                 String dateto = result.getString("dateto");
                 int amount = result.getInt("amount");
+                String advance = result.getString("advance");
                 String paystatus = result.getString("paystatus");
                 String returnstatus = result.getString("returnstatus");
                 String branchname = result.getString("branchname");
@@ -54,9 +55,13 @@
         <span>fees:<%=amount%></span>
         <span>fine:<%=fine%></span>
         <span>Total:<%=amount+fine%></span>
+        <% if(advance.equals("Paid")){%>
                 <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=0&cid=<%=id%>">Advance Paid</a></button>
+        <%} if(paystatus.equals("Paid")){%>        
                 <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=1&cid=<%=id%>">Complete payment</a></button>
+        <%} if(returnstatus.equals("Completed")){%>        
                 <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=2&cid=<%=id%>">Complete return</a></button>
+        <%}%>
       </div>
         <%}%>
 
@@ -66,29 +71,17 @@
                 int t = Integer.parseInt(request.getParameter("st"));
                 if(t==1){
                     int n = Integer.parseInt(request.getParameter("cid"));
-                    ResultSet result1 = st.executeQuery("Select * from customer where customerid = "+n+" ");
-                    if(result1.getString("returnstatus").equals("Completed")){
                         int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+n+" ");
                         if(rows1 > 0){
                             out.print("<script>alert('payment status updated for customer "+n+"');</script>");
                         }
-                    }
-                    else{
-                         out.print("<script>alert('Payment can be completed only after returning');</script>");
-                    }
                 }
                 else if(t == 2){
                     int n = Integer.parseInt(request.getParameter("cid"));
-                    ResultSet result1 = st.executeQuery("Select * from customer where customerid = "+n+" ");
-                    if(result1.getString("advance").equals("Paid")){
                         int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+n+" ");
                         if(rows1 > 0){
                             out.print("<script>alert('payment status updated for customer "+n+"');</script>");
                         }
-                    }
-                    else{
-                         out.print("<script>alert('ask selected customer to pay advance');</script>");
-                    }
 
                 }
                 else if(t == 0){
