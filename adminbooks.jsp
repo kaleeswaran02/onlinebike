@@ -5,11 +5,6 @@
     </head>
     <body>
         <%
-            SimpleDateFormat formatter1=new SimpleDateFormat("yyyy/mm/dd"); 
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/mm/dd");  
-            LocalDateTime now = LocalDateTime.now();
-            String s =""+ dtf.format(now);
-            Date d1=formatter1.parse(s);
             HttpSession session1 = request.getSession(false);
             String username = (String)session1.getAttribute("username");
             config conn = new config();
@@ -26,8 +21,7 @@
                 String paystatus = result.getString("paystatus");
                 String returnstatus = result.getString("returnstatus");
                 String branchname = result.getString("branchname");
-                int fine = 0;
-                Date d2=formatter1.parse(dateto);;  
+                int fine = 500;
         %>
             <div class="card">
         <h1><%=bikename %></h1>
@@ -56,62 +50,52 @@
                 <td><span>returnstatus:</span>
                 <td><span> <%=returnstatus%></span></td>
           </tr>
-        </table><%
-        if(d1.compareTo(d2)==1){
-            fine = 200;
-        }
-        else if(d1.compareTo(d2)>1 && d1.compareTo(d2)>4){
-            fine = 500;
-        }
-        else if(d1.compareTo(d2)>3){
-            fine = amount;
-        }
-        %>
+        </table>
         <span>fees:<%=amount%></span>
         <span>fine:<%=fine%></span>
         <span>Total:<%=amount+fine%></span>
-                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=0&cid=<%=customerid%>">Advance Paid</a></button>
-                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=1&cid=<%=customerid%>">Complete payment</a></button>
-                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=2&cid=<%=customerid%>">Complete return</a></button>
+                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=0&cid=<%=id%>">Advance Paid</a></button>
+                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=1&cid=<%=id%>">Complete payment</a></button>
+                <button style="margin-left:20%; width:70px; height:30px;"><a href="adminbooks.jsp?st=2&cid=<%=id%>">Complete return</a></button>
       </div>
         <%}%>
 
 
         <%
             if(request.getParameter("st")!=null){
-                int st = request.getParameter("st");
-                if(st==1){
-                    int n = request.getParameter("cid");
-                    ResultSet result = st.executeQuery("Select * from customer where customerid = "+n+" ");
-                    if(result.getString("returnstatus").equals("Completed")){
-                        int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+cid+" ");
+                int t = Integer.parseInt(request.getParameter("st"));
+                if(t==1){
+                    int n = Integer.parseInt(request.getParameter("cid"));
+                    ResultSet result1 = st.executeQuery("Select * from customer where customerid = "+n+" ");
+                    if(result1.getString("returnstatus").equals("Completed")){
+                        int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+n+" ");
                         if(rows1 > 0){
-                            out.print("<script>alert('payment status updated for customer "+cid+"');</script>")
+                            out.print("<script>alert('payment status updated for customer "+n+"');</script>");
                         }
                     }
                     else{
-                         out.print("<script>alert('Payment can be completed only after returning');</script>")
+                         out.print("<script>alert('Payment can be completed only after returning');</script>");
                     }
                 }
-                else if(st == 2){
-                    int n = request.getParameter("cid");
-                    ResultSet result = st.executeQuery("Select * from customer where customerid = "+n+" ");
-                    if(result.getString("advance").equals("Paid")){
-                        int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+cid+" ");
+                else if(t == 2){
+                    int n = Integer.parseInt(request.getParameter("cid"));
+                    ResultSet result1 = st.executeQuery("Select * from customer where customerid = "+n+" ");
+                    if(result1.getString("advance").equals("Paid")){
+                        int rows1 = st.executeUpdate("update customer set paystatus = 'Paid' where customerid = "+n+" ");
                         if(rows1 > 0){
-                            out.print("<script>alert('payment status updated for customer "+cid+"');</script>")
+                            out.print("<script>alert('payment status updated for customer "+n+"');</script>");
                         }
                     }
                     else{
-                         out.print("<script>alert('ask selected customer to pay advance');</script>")
+                         out.print("<script>alert('ask selected customer to pay advance');</script>");
                     }
 
                 }
-                else if(st == 0){
-                    int n = request.getParameter("cid");
-                    int rows1 = st.executeUpdate("update customer set advance = 'Paid' where customerid = "+cid+" ");
+                else if(t == 0){
+                    int n = Integer.parseInt(request.getParameter("cid"));;
+                    int rows1 = st.executeUpdate("update customer set advance = 'Paid' where customerid = "+n+" ");
                     if(rows1 > 0){
-                        out.print("<script>alert('advance updated for customer "+cid+"');</script>")
+                        out.print("<script>alert('advance updated for customer "+n+"');</script>");
                     }
                 }
             }
