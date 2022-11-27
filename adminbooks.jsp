@@ -92,7 +92,7 @@
 
                 }
                 else if(t == 0){
-                    int n = Integer.parseInt(request.getParameter("cid"));;
+                    int n = Integer.parseInt(request.getParameter("cid"));
                     int rows1 = st.executeUpdate("update customer set advance = 'Paid' where customerid = "+n+" ");
                     if(rows1 > 0){
                         out.print("<script>alert('advance updated for customer "+n+"');</script>");
